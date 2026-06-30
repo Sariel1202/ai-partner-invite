@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AI Partner大会 · 邀请函</title>
+<style>
+  :root{
+    --cyan:#2fd2ff;
+    --cyan-soft:#a8eeff;
+    --ice:#f2fbff;
+    --blue-deep:#0a2147;
+    --blue-mid:#16518f;
+    --glass:rgba(8,24,52,.46);
+    --glass-strong:rgba(10,30,62,.58);
+    --line:rgba(168,238,255,.32);
+    --line-soft:rgba(168,238,255,.18);
+    --text:#fbfeff;
+    --text-mid:#cfe9fb;
+    --text-dim:#86abcf;
+    --font-disp:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --font-body:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    --font-mono:ui-monospace,"SF Mono","Cascadia Code","Roboto Mono",Consolas,Menlo,monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{background:#0a2147;}
+  body{
+    font-family:var(--font-body);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background:
+      radial-gradient(1.5px 1.5px at 12% 6%, rgba(234,248,255,.6) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 78% 4%, rgba(234,248,255,.45) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 35% 14%, rgba(234,248,255,.5) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 92% 22%, rgba(234,248,255,.4) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 6% 38%, rgba(234,248,255,.45) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 60% 46%, rgba(234,248,255,.35) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 88% 58%, rgba(234,248,255,.45) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 22% 68%, rgba(234,248,255,.35) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 70% 78%, rgba(234,248,255,.45) 50%, transparent 51%),
+      radial-gradient(1.5px 1.5px at 45% 88%, rgba(234,248,255,.35) 50%, transparent 51%),
+      radial-gradient(ellipse 65% 45% at 18% -4%, rgba(63,208,255,.40), transparent 62%),
+      radial-gradient(ellipse 60% 40% at 102% 14%, rgba(120,200,255,.32), transparent 58%),
+      radial-gradient(ellipse 65% 45% at -5% 52%, rgba(63,208,255,.24), transparent 58%),
+      radial-gradient(ellipse 65% 40% at 106% 78%, rgba(164,236,255,.26), transparent 58%),
+      radial-gradient(ellipse 75% 45% at 30% 108%, rgba(63,208,255,.30), transparent 58%),
+      linear-gradient(180deg, #0a2147 0%, #103a72 16%, #16518f 36%, #1a5c9e 52%, #16518f 68%, #103a72 84%, #0a2147 100%);
+  }
+  .page{
+    max-width:520px;
+    margin:0 auto;
+    position:relative;
+    min-height:100vh;
+  }
+
+  /* ---------- shared ---------- */
+  .section{
+    padding:68px 28px;
+    position:relative;
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .section.in{opacity:1;transform:translateY(0);}
+  .section + .section{border-top:1px solid var(--line-soft);}
+
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .eyebrow .tick{
+    width:16px;height:2px;
+    background:var(--cyan);
+    box-shadow:0 0 8px rgba(63,208,255,.8);
+  }
+  .eyebrow span{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.28em;
+    color:var(--cyan-soft);
+    text-transform:uppercase;
+    text-shadow:0 0 10px rgba(63,208,255,.4);
+  }
+  .eyebrow .cn{
+    font-family:var(--font-disp);
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.06em;
+    color:var(--text);
+  }
+
+  .eyebrow-icon{
+    width:18px;height:18px;
+    color:var(--cyan-soft);
+    opacity:.9;
+    flex-shrink:0;
+    filter:drop-shadow(0 0 6px rgba(63,208,255,.4));
+  }
+
+  .hero-icon{
+    position:absolute;
+    color:var(--cyan-soft);
+    pointer-events:none;
+    z-index:1;
+  }
+  .hero-icon.camera{
+    width:168px;height:168px;
+    top:9%;right:-34px;
+    opacity:.16;
+    transform:rotate(7deg);
+  }
+  .hero-icon.clapper{
+    width:128px;height:128px;
+    bottom:17%;left:-22px;
+    opacity:.16;
+    transform:rotate(-9deg);
+  }
+  .hero-icon.reel{
+    width:46px;height:46px;
+    top:16%;left:8%;
+    opacity:.55;
+    animation:reelSpin 14s linear infinite;
+  }
+  @keyframes reelSpin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+  }
+
+  .filmstrip{
+    height:14px;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(168,238,255,.55) 0 5px, transparent 5px 16px);
+    background-position:0 1px;
+    background-repeat:repeat-x;
+    background-size:16px 5px;
+    position:relative;
+    opacity:.7;
+  }
+  .filmstrip::after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:1px;
+    height:5px;
+    background-image:repeating-linear-gradient(90deg, rgba(168,238,255,.55) 0 5px, transparent 5px 16px);
+    background-size:16px 5px;
+  }
+
+  .hero{
+    position:relative;
+    min-height:100vh;
+    padding:0 26px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .hero-grid{
+    position:absolute;inset:0;
+    z-index:0;
+    background-image:
+      linear-gradient(rgba(143,227,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,227,255,.08) 1px, transparent 1px);
+    background-size:40px 40px;
+    mask-image:radial-gradient(circle at 50% 32%, black 0%, transparent 70%);
+  }
+  .hero-ribbon{
+    position:absolute;
+    z-index:1;
+    left:-12%;right:-12%;
+    top:8%;
+    width:124%;
+    opacity:.9;
+    animation:ribbonFloat 9s ease-in-out infinite;
+  }
+  @keyframes ribbonFloat{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-14px) scale(1.01);}
+  }
+  .hero-skyline{
+    position:absolute;
+    z-index:1;
+    left:0;right:0;bottom:0;
+    width:100%;
+    opacity:.85;
+  }
+  .scan{
+    position:absolute;left:0;right:0;height:140px;
+    z-index:2;
+    background:linear-gradient(180deg, transparent, rgba(143,227,255,.14), transparent);
+    animation:scan 7s linear infinite;
+    pointer-events:none;
+  }
+  @keyframes scan{
+    0%{top:-140px;}
+    100%{top:100%;}
+  }
+
+  .frame{
+    position:absolute;
+    z-index:2;
+    width:28px;height:28px;
+    border:1.4px solid var(--cyan-soft);
+    filter:drop-shadow(0 0 6px rgba(143,227,255,.6));
+    opacity:.9;
+  }
+  .frame.tl{top:28px;left:18px;border-right:none;border-bottom:none;}
+  .frame.tr{top:28px;right:18px;border-left:none;border-bottom:none;}
+  .frame.bl{bottom:28px;left:18px;border-right:none;border-top:none;}
+  .frame.br{bottom:28px;right:18px;border-left:none;border-top:none;}
+
+  .rec{
+    position:absolute;top:32px;left:56px;
+    z-index:2;
+    display:flex;align-items:center;gap:7px;
+    font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.2em;
+    color:var(--text-mid);
+  }
+  .rec i{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 10px var(--cyan);
+    animation:blink 1.6s ease-in-out infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+  .hero-code{
+    position:absolute;top:30px;right:56px;
+    z-index:2;
+    font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.14em;
+    color:var(--text-mid);
+    text-align:right;
+  }
+
+  .hero-body{
+    position:relative;z-index:3;
+    padding-top:30px;
+  }
+  .invite-tag{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.32em;
+    color:var(--cyan-soft);
+    text-shadow:0 0 12px rgba(143,227,255,.5);
+    margin-bottom:20px;
+  }
+  .hero-title{
+    font-family:var(--font-disp);
+    font-weight:800;
+    line-height:1.02;
+    letter-spacing:-.01em;
+  }
+  .hero-title .en{
+    display:block;
+    font-size:58px;
+    color:var(--ice);
+    text-shadow:0 0 22px rgba(63,208,255,.35);
+  }
+  .hero-title .cn{
+    display:block;
+    font-size:58px;
+    margin-top:8px;
+    background:linear-gradient(90deg, var(--cyan-soft), var(--ice) 50%, var(--cyan));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    filter:drop-shadow(0 0 18px rgba(63,208,255,.45));
+  }
+  .hero-sub{
+    margin-top:24px;
+    font-size:17px;
+    line-height:1.8;
+    color:var(--text-mid);
+    max-width:360px;
+    border-left:2px solid var(--cyan);
+    padding-left:16px;
+  }
+
+  .hero-foot{
+    position:relative;z-index:3;
+    margin-top:50px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+    gap:22px;
+  }
+  .stamp{
+    border:1.4px solid var(--cyan-soft);
+    box-shadow:0 0 22px rgba(63,208,255,.35), inset 0 0 12px rgba(63,208,255,.12);
+    background:rgba(63,208,255,.07);
+    color:var(--ice);
+    font-family:var(--font-disp);
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:.5em;
+    padding:18px 12px 18px 30px;
+  }
+  .scroll-cue{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--text-mid);
+    letter-spacing:.2em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+  }
+  .scroll-cue .ln{
+    width:1px;height:28px;
+    background:linear-gradient(var(--cyan), transparent);
+    box-shadow:0 0 6px var(--cyan);
+    animation:drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop{
+    0%{transform:translateY(-4px);opacity:0;}
+    40%{opacity:1;}
+    100%{transform:translateY(10px);opacity:0;}
+  }
+
+  /* ---------- glass panel base ---------- */
+  .glass{
+    background:var(--glass);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--line);
+    box-shadow:0 8px 28px rgba(2,10,24,.4), inset 0 1px 0 rgba(214,241,255,.06);
+  }
+
+  /* ---------- 简介 ---------- */
+  .intro-text{
+    font-size:16.5px;
+    line-height:2;
+    color:var(--text-mid);
+  }
+  .intro-text strong{
+    color:var(--text);
+    font-weight:700;
+  }
+  .intro-quote{
+    margin-top:26px;
+    padding:18px 20px;
+    border-left:2px solid var(--cyan);
+    font-size:14.5px;
+    line-height:1.9;
+    color:var(--cyan-soft);
+    font-family:var(--font-mono);
+    letter-spacing:.02em;
+  }
+
+  /* ---------- 活动信息 ---------- */
+  .info-panel{}
+  .info-row{
+    display:grid;
+    grid-template-columns:88px 1fr;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-key{
+    padding:19px 12px 19px 16px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    letter-spacing:.04em;
+    color:var(--cyan-soft);
+    text-shadow:0 0 8px rgba(143,227,255,.35);
+    border-right:1px solid var(--line-soft);
+    display:flex;
+    align-items:flex-start;
+  }
+  .info-val{
+    padding:19px 16px;
+    font-size:15px;
+    line-height:1.75;
+    color:var(--text);
+  }
+  .info-val small{
+    display:block;
+    margin-top:3px;
+    font-size:12.5px;
+    color:var(--text-mid);
+    font-family:var(--font-mono);
+    letter-spacing:.02em;
+  }
+
+  /* ---------- 简要议程 / timeline ---------- */
+  .tl-ruler{
+    display:flex;
+    width:100%;
+    height:7px;
+    border-radius:3px;
+    overflow:hidden;
+    margin-bottom:12px;
+    box-shadow:0 0 16px rgba(63,208,255,.3);
+  }
+  .tl-ruler i{display:block;height:100%;}
+  .tl-range{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--text-dim);
+    letter-spacing:.05em;
+    margin-bottom:38px;
+  }
+  .tl-list{
+    position:relative;
+    padding-left:20px;
+  }
+  .tl-list::before{
+    content:"";
+    position:absolute;
+    left:3px;top:6px;bottom:6px;
+    width:1.5px;
+    background:linear-gradient(var(--cyan), var(--cyan-soft), transparent);
+    box-shadow:0 0 8px rgba(63,208,255,.4);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:30px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-20px;top:5px;
+    width:8px;height:8px;
+    border-radius:50%;
+    background:#04122b;
+    border:1.6px solid var(--cyan);
+    box-shadow:0 0 10px rgba(63,208,255,.7);
+  }
+  .tl-time{
+    font-family:var(--font-mono);
+    font-size:14px;
+    color:var(--cyan-soft);
+    text-shadow:0 0 8px rgba(63,208,255,.4);
+    letter-spacing:.03em;
+    margin-bottom:6px;
+  }
+  .tl-desc{
+    font-size:15.5px;
+    line-height:1.65;
+    color:var(--text);
+  }
+
+  /* ---------- 结语 ---------- */
+  .closing{text-align:left;}
+  .closing-text{
+    font-size:16px;
+    line-height:2;
+    color:var(--text-mid);
+    margin-bottom:38px;
+  }
+  .sign{
+    border-top:1px solid var(--line-soft);
+    padding-top:22px;
+  }
+  .sign .org{
+    font-family:var(--font-disp);
+    font-size:20px;
+    font-weight:800;
+    background:linear-gradient(90deg, var(--cyan-soft), var(--ice));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing:.03em;
+  }
+  .sign .date{
+    margin-top:7px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-dim);
+    letter-spacing:.06em;
+  }
+
+  /* ---------- 联系人 ---------- */
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    border-radius:2px;
+    overflow:hidden;
+  }
+  .contact-card{
+    padding:19px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    text-decoration:none;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .contact-card:last-child{border-bottom:none;}
+  .contact-name{
+    font-size:15.5px;
+    color:var(--text);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .contact-name .dot{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 8px var(--cyan);
+  }
+  .contact-num{
+    font-family:var(--font-mono);
+    font-size:14.5px;
+    color:var(--cyan-soft);
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .contact-num .call{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:#04122b;
+    background:var(--cyan-soft);
+    box-shadow:0 0 10px rgba(143,227,255,.6);
+    padding:4px 8px;
+    letter-spacing:.1em;
+    font-weight:700;
+  }
+
+  /* ---------- 导航定位 ---------- */
+  .nav-card{overflow:hidden;}
+  .nav-radar{
+    position:relative;
+    height:150px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(63,208,255,.18), transparent 65%),
+      linear-gradient(180deg, rgba(10,30,60,.5), rgba(8,22,45,.5));
+  }
+  .nav-radar::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(143,227,255,.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,227,255,.16) 1px, transparent 1px);
+    background-size:24px 24px;
+  }
+  .nav-ring{
+    position:absolute;top:50%;left:50%;
+    border:1px solid rgba(143,227,255,.5);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:radarPulse 3s ease-out infinite;
+  }
+  .nav-ring.r1{width:40px;height:40px;}
+  .nav-ring.r2{width:80px;height:80px;animation-delay:.6s;}
+  .nav-ring.r3{width:120px;height:120px;animation-delay:1.2s;}
+  @keyframes radarPulse{
+    0%{opacity:.7;transform:translate(-50%,-50%) scale(.6);}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(1.15);}
+  }
+  .nav-pin{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:14px;height:14px;
+    border-radius:50% 50% 50% 0;
+    background:var(--cyan);
+    box-shadow:0 0 16px rgba(63,208,255,.9);
+    rotate:-45deg;
+  }
+  .nav-body{padding:22px 20px 24px;}
+  .nav-addr-label{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    letter-spacing:.12em;
+    color:var(--text-dim);
+    margin-bottom:8px;
+  }
+  .nav-addr{
+    font-size:16.5px;
+    line-height:1.6;
+    color:var(--text);
+    font-weight:600;
+  }
+  .nav-addr small{
+    display:block;
+    margin-top:4px;
+    font-size:13.5px;
+    font-weight:400;
+    color:var(--text-mid);
+  }
+  .nav-btns{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+  }
+  .nav-btn{
+    flex:1;
+    text-align:center;
+    padding:13px 8px;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-decoration:none;
+    border:1px solid var(--cyan-soft);
+    color:var(--ice);
+    background:rgba(63,208,255,.08);
+    box-shadow:0 0 14px rgba(63,208,255,.2);
+    transition:transform .15s ease;
+  }
+  .nav-btn:active{transform:scale(.97);}
+
+  /* ---------- footer ---------- */
+  .foot{
+    position:relative;
+    padding:38px 28px 58px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    color:var(--text-dim);
+    overflow:hidden;
+  }
+
+  .music-btn{
+    position:fixed;
+    right:18px;bottom:22px;
+    z-index:50;
+    width:48px;height:48px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--glass-strong);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border:1.4px solid var(--cyan-soft);
+    box-shadow:0 0 18px rgba(63,208,255,.4), inset 0 0 8px rgba(63,208,255,.15);
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .music-btn svg{
+    width:22px;height:22px;
+    color:var(--cyan-soft);
+    filter:drop-shadow(0 0 6px rgba(63,208,255,.5));
+  }
+  .music-btn .disc{
+    animation:discSpin 3.2s linear infinite;
+    animation-play-state:paused;
+    transform-origin:50% 50%;
+  }
+  .music-btn.playing .disc{animation-play-state:running;}
+  @keyframes discSpin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .music-btn .disc{animation:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .scan,.rec i,.scroll-cue .ln,.nav-ring,.hero-ribbon,.hero-icon.reel{animation:none;}
+    .section{transition:none;}
+  }
+
+
+
+  @media (max-width:380px){
+    .hero-title .en, .hero-title .cn{font-size:46px;}
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="ic-clapper" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="21" width="36" height="20" rx="2"/>
+      <path d="M6 21 L9.5 8 L40 8 L42 21 Z"/>
+      <line x1="14" y1="8.6" x2="10.6" y2="20.6"/>
+      <line x1="21.5" y1="8.6" x2="18.1" y2="20.6"/>
+      <line x1="29" y1="8.6" x2="25.6" y2="20.6"/>
+      <line x1="36.5" y1="8.6" x2="33.1" y2="20.6"/>
+    </symbol>
+    <symbol id="ic-camera" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="14" cy="10" r="5.5"/>
+      <circle cx="29" cy="10" r="5.5"/>
+      <rect x="6" y="18" width="30" height="20" rx="2"/>
+      <circle cx="40" cy="28" r="6.5"/>
+      <circle cx="40" cy="28" r="2"/>
+    </symbol>
+    <symbol id="ic-reel" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="17"/>
+      <circle cx="24" cy="24" r="3.6"/>
+      <circle cx="24" cy="11" r="3"/>
+      <circle cx="35.3" cy="19.6" r="3"/>
+      <circle cx="31" cy="33" r="3"/>
+      <circle cx="17" cy="33" r="3"/>
+      <circle cx="12.7" cy="19.6" r="3"/>
+    </symbol>
+    <symbol id="ic-tape" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="11" width="40" height="25" rx="2.5"/>
+      <circle cx="16" cy="23.5" r="6"/>
+      <circle cx="32" cy="23.5" r="6"/>
+      <circle cx="16" cy="23.5" r="1.8"/>
+      <circle cx="32" cy="23.5" r="1.8"/>
+      <line x1="8" y1="31.5" x2="40" y2="31.5"/>
+    </symbol>
+    <symbol id="ic-disc" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="24" cy="24" r="18"/>
+      <circle cx="24" cy="24" r="6"/>
+      <circle cx="24" cy="24" r="1.6" fill="currentColor"/>
+      <path d="M24 6 L24 11" />
+    </symbol>
+  </defs>
+</svg>
+
+<button class="music-btn" id="musicBtn" type="button" aria-label="播放背景音乐" aria-pressed="false">
+  <svg class="disc"><use href="#ic-disc"/></svg>
+</button>
+<audio id="bgMusic" loop preload="none" playsinline>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page">
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+
+    <svg class="hero-ribbon" viewBox="0 0 500 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3fd0ff" stop-opacity="0"/>
+          <stop offset="35%" stop-color="#3fd0ff" stop-opacity=".9"/>
+          <stop offset="55%" stop-color="#d6f1ff" stop-opacity="1"/>
+          <stop offset="75%" stop-color="#3fd0ff" stop-opacity=".8"/>
+          <stop offset="100%" stop-color="#3fd0ff" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="ribbonGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <path d="M -40 230 C 90 150, 160 320, 280 220 C 380 145, 430 200, 540 110" fill="none" stroke="url(#ribbonGrad)" stroke-width="3" stroke-linecap="round" filter="url(#ribbonGlow)"/>
+      <path d="M -40 260 C 100 190, 170 340, 290 250 C 390 180, 440 230, 540 150" fill="none" stroke="url(#ribbonGrad)" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+    </svg>
+
+    <svg class="hero-skyline" viewBox="0 0 500 140" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#12366a" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#081b3e" stop-opacity=".9"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="60" width="34" height="80" fill="url(#skyFade)"/>
+      <rect x="38" y="40" width="26" height="100" fill="url(#skyFade)"/>
+      <rect x="68" y="78" width="20" height="62" fill="url(#skyFade)"/>
+      <rect x="92" y="20" width="30" height="120" fill="url(#skyFade)"/>
+      <rect x="126" y="58" width="22" height="82" fill="url(#skyFade)"/>
+      <rect x="152" y="0" width="34" height="140" fill="url(#skyFade)"/>
+      <rect x="190" y="48" width="24" height="92" fill="url(#skyFade)"/>
+      <rect x="218" y="86" width="18" height="54" fill="url(#skyFade)"/>
+      <rect x="240" y="30" width="30" height="110" fill="url(#skyFade)"/>
+      <rect x="274" y="64" width="22" height="76" fill="url(#skyFade)"/>
+      <rect x="300" y="10" width="32" height="130" fill="url(#skyFade)"/>
+      <rect x="336" y="52" width="24" height="88" fill="url(#skyFade)"/>
+      <rect x="364" y="84" width="18" height="56" fill="url(#skyFade)"/>
+      <rect x="386" y="36" width="28" height="104" fill="url(#skyFade)"/>
+      <rect x="418" y="66" width="22" height="74" fill="url(#skyFade)"/>
+      <rect x="444" y="22" width="30" height="118" fill="url(#skyFade)"/>
+      <rect x="478" y="58" width="22" height="82" fill="url(#skyFade)"/>
+      <g fill="#8fe3ff" opacity=".55">
+        <rect x="100" y="34" width="2.4" height="2.4"/>
+        <rect x="108" y="50" width="2.4" height="2.4"/>
+        <rect x="160" y="14" width="2.4" height="2.4"/>
+        <rect x="168" y="30" width="2.4" height="2.4"/>
+        <rect x="160" y="48" width="2.4" height="2.4"/>
+        <rect x="248" y="44" width="2.4" height="2.4"/>
+        <rect x="256" y="60" width="2.4" height="2.4"/>
+        <rect x="308" y="22" width="2.4" height="2.4"/>
+        <rect x="316" y="40" width="2.4" height="2.4"/>
+        <rect x="316" y="58" width="2.4" height="2.4"/>
+        <rect x="392" y="48" width="2.4" height="2.4"/>
+        <rect x="452" y="36" width="2.4" height="2.4"/>
+        <rect x="452" y="54" width="2.4" height="2.4"/>
+      </g>
+    </svg>
+
+    <svg class="hero-icon camera" viewBox="0 0 48 48"><use href="#ic-camera"/></svg>
+    <svg class="hero-icon clapper" viewBox="0 0 48 48"><use href="#ic-clapper"/></svg>
+    <svg class="hero-icon reel" viewBox="0 0 48 48"><use href="#ic-reel"/></svg>
+
+    <div class="scan"></div>
+    <div class="frame tl"></div>
+    <div class="frame tr"></div>
+    <div class="frame bl"></div>
+    <div class="frame br"></div>
+    <div class="rec"><i></i>REC · LIVE</div>
+    <div class="hero-code">EP.2026·07·03<br>AI / FILM</div>
+
+    <div class="hero-body">
+      <div class="invite-tag">诚邀莅临 &nbsp;·&nbsp; YOU ARE INVITED</div>
+      <h1 class="hero-title">
+        <span class="en">AI Partner</span>
+        <span class="cn">大会</span>
+      </h1>
+      <p class="hero-sub">AI 重塑影像生产力，链接未来电影产业生态。</p>
+    </div>
+
+    <div class="hero-foot">
+      <div class="stamp">邀请函</div>
+      <div class="scroll-cue"><span>SCROLL</span><span class="ln"></span></div>
+    </div>
+  </section>
+
+  <div class="filmstrip"></div>
+
+  <!-- 简介 -->
+  <section class="section">
+    <div class="eyebrow"><svg class="eyebrow-icon"><use href="#ic-camera"/></svg><span>BRIEFING</span><span class="cn">关于本次大会</span></div>
+    <p class="intro-text">
+      诚挚邀请您出席<strong>"AI Partner大会"</strong>。本次大会将于<strong>2026年7月3日14:35</strong>在<strong>模数世界人工智能新质产业社区</strong>举办，由北京经济技术开发区信息产业局、北京经济技术开发区宣传文化部、北京经济技术开发区行政审批局、AI未来电影研究院主办。
+    </p>
+    <div class="intro-quote">"AI 重塑影像生产力，链接未来电影产业生态。"</div>
+  </section>
+
+  <!-- 活动信息 -->
+  <section class="section">
+    <div class="eyebrow"><svg class="eyebrow-icon"><use href="#ic-clapper"/></svg><span>EVENT INFO</span><span class="cn">活动信息</span></div>
+    <div class="info-panel glass">
+      <div class="info-row">
+        <div class="info-key">活动时间</div>
+        <div class="info-val">2026 年 7 月 3 日 14:35 开始</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">活动地点</div>
+        <div class="info-val">模数世界人工智能新质产业社区<small>北京市通州区信创园 B 区 7 号楼</small></div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">主办单位</div>
+        <div class="info-val">北京经济技术开发区信息产业局、北京经济技术开发区宣传文化部、北京经济技术开发区行政审批局、AI 未来电影研究院</div>
+      </div>
+      <div class="info-row">
+        <div class="info-key">传播主题</div>
+        <div class="info-val">AI 重塑影像生产力，链接未来电影产业生态。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 简要议程 -->
+  <section class="section">
+    <div class="eyebrow"><svg class="eyebrow-icon"><use href="#ic-reel"/></svg><span>TIMELINE</span><span class="cn">简要议程</span></div>
+
+    <div class="tl-ruler">
+      <i style="width:3.8%;background:var(--ice);"></i>
+      <i style="width:30.8%;background:var(--cyan-soft);"></i>
+      <i style="width:11.5%;background:var(--blue-mid);"></i>
+      <i style="width:23.1%;background:var(--cyan);"></i>
+      <i style="width:23.1%;background:var(--cyan-soft);"></i>
+      <i style="width:7.7%;background:var(--ice);"></i>
+    </div>
+    <div class="tl-range"><span>14:35</span><span>16:45</span></div>
+
+    <div class="tl-list">
+      <div class="tl-item">
+        <div class="tl-time">14:35 — 14:40</div>
+        <div class="tl-desc">开场</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">14:40 — 15:20</div>
+        <div class="tl-desc">领导讲话、政策宣讲及数字人相关环节</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">15:20 — 15:35</div>
+        <div class="tl-desc">国家开放大学培训合作签约</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">15:35 — 16:05</div>
+        <div class="tl-desc">申积军创作分享、《古格王朝》主创交流</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">16:05 — 16:35</div>
+        <div class="tl-desc">火山剧创产品展示、研究院自研产品与作品展示</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">16:35 — 16:45</div>
+        <div class="tl-desc">活动总结与合影</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 结语 -->
+  <section class="section closing">
+    <div class="eyebrow"><svg class="eyebrow-icon"><use href="#ic-tape"/></svg><span>CLOSING</span><span class="cn">期待相见</span></div>
+    <p class="closing-text">诚挚期待您莅临现场，共同交流 AI 影视生产方式与 OPC 生态合作机会。</p>
+    <div class="sign">
+      <div class="org">AI Partner 大会</div>
+      <div class="date">2026 年 6 月 30 日</div>
+    </div>
+  </section>
+
+  <!-- 联系人 -->
+  <section class="section">
+    <div class="eyebrow"><span class="tick"></span><span>CONTACT</span><span class="cn">联系人</span></div>
+    <div class="contact-list glass">
+      <a class="contact-card" href="tel:13811254963">
+        <span class="contact-name"><span class="dot"></span>太白</span>
+        <span class="contact-num">138 1125 4963<span class="call">CALL</span></span>
+      </a>
+      <a class="contact-card" href="tel:15010244103">
+        <span class="contact-name"><span class="dot"></span>阿比</span>
+        <span class="contact-num">150 1024 4103<span class="call">CALL</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 导航定位 -->
+  <section class="section">
+    <div class="eyebrow"><span class="tick"></span><span>LOCATION</span><span class="cn">导航定位</span></div>
+    <div class="nav-card glass">
+      <div class="nav-radar">
+        <div class="nav-ring r1"></div>
+        <div class="nav-ring r2"></div>
+        <div class="nav-ring r3"></div>
+        <div class="nav-pin"></div>
+      </div>
+      <div class="nav-body">
+        <div class="nav-addr-label">DESTINATION</div>
+        <div class="nav-addr">模数世界人工智能新质产业社区<small>北京市通州区信创园 B 区 7 号楼</small></div>
+        <div class="nav-btns">
+          <a class="nav-btn" target="_blank" rel="noopener" href="https://www.amap.com/search?query=北京市通州区信创园B区7号楼模数世界人工智能新质产业社区">高德导航</a>
+          <a class="nav-btn" target="_blank" rel="noopener" href="https://map.baidu.com/search?querytype=s&wd=北京市通州区信创园B区7号楼模数世界人工智能新质产业社区">百度导航</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="filmstrip"></div>
+
+  <div class="foot">
+    <span>AI PARTNER · 2026</span>
+    <span>影像 × 智能</span>
+  </div>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.15});
+  sections.forEach(s=>io.observe(s));
+
+  // ---- 背景音乐 ----
+  const music = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+
+  function setPlayingUI(isPlaying){
+    musicBtn.classList.toggle('playing', isPlaying);
+    musicBtn.setAttribute('aria-pressed', String(isPlaying));
+    musicBtn.setAttribute('aria-label', isPlaying ? '暂停背景音乐' : '播放背景音乐');
+  }
+
+  function tryAutoplay(){
+    music.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+  }
+
+  // 微信内置浏览器：桥就绪后允许自动播放（不支持时静默失败，按钮仍可手动播放）
+  if (typeof document.addEventListener !== 'undefined') {
+    if (window.WeixinJSBridge) {
+      tryAutoplay();
+    } else {
+      document.addEventListener('WeixinJSBridgeReady', tryAutoplay, false);
+    }
+  }
+
+  musicBtn.addEventListener('click', ()=>{
+    if (music.paused){
+      music.play().then(()=>setPlayingUI(true)).catch(()=>setPlayingUI(false));
+    } else {
+      music.pause();
+      setPlayingUI(false);
+    }
+  });
+
+</script>
+</body>
+</html>
